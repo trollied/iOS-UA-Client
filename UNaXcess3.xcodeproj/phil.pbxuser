@@ -10,9 +10,9 @@
 	};
 	1D3623250D0F684500981E51 /* UNaXcess3AppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1587, 10608}}";
-			sepNavSelRange = "{22820, 0}";
-			sepNavVisRange = "{21783, 1842}";
+			sepNavIntBoundsRect = "{{0, 0}, {1118, 10543}}";
+			sepNavSelRange = "{3067, 0}";
+			sepNavVisRange = "{2643, 1496}";
 			sepNavWindowFrame = "{{52, 118}, {807, 755}}";
 		};
 	};
@@ -337,7 +337,7 @@
 		fRef = 1D3623250D0F684500981E51 /* UNaXcess3AppDelegate.m */;
 		name = "UNaXcess3AppDelegate.m: 478";
 		rLen = 0;
-		rLoc = 17726;
+		rLoc = 17804;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 17700;
@@ -531,7 +531,7 @@
 		fRef = 1D3623250D0F684500981E51 /* UNaXcess3AppDelegate.m */;
 		name = "UNaXcess3AppDelegate.m: 491";
 		rLen = 0;
-		rLoc = 18152;
+		rLoc = 18230;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 17347;
@@ -581,7 +581,7 @@
 		fRef = 1D3623250D0F684500981E51 /* UNaXcess3AppDelegate.m */;
 		name = "UNaXcess3AppDelegate.m: 494";
 		rLen = 30;
-		rLoc = 18296;
+		rLoc = 18374;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 17772;
@@ -591,7 +591,7 @@
 		fRef = 1D3623250D0F684500981E51 /* UNaXcess3AppDelegate.m */;
 		name = "UNaXcess3AppDelegate.m: 515";
 		rLen = 0;
-		rLoc = 19032;
+		rLoc = 19110;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 18329;
@@ -601,7 +601,7 @@
 		fRef = 1D3623250D0F684500981E51 /* UNaXcess3AppDelegate.m */;
 		name = "UNaXcess3AppDelegate.m: 540";
 		rLen = 0;
-		rLoc = 19983;
+		rLoc = 20061;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 17731;
@@ -621,7 +621,7 @@
 		fRef = 1D3623250D0F684500981E51 /* UNaXcess3AppDelegate.m */;
 		name = "UNaXcess3AppDelegate.m: 617";
 		rLen = 0;
-		rLoc = 22820;
+		rLoc = 22898;
 		rType = 0;
 		vrLen = 1837;
 		vrLoc = 21783;
@@ -748,7 +748,7 @@
 	4AD07E6912A6CD3000FFF66E /* MessageListCustomCell.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {877, 528}}";
-			sepNavSelRange = "{274, 0}";
+			sepNavSelRange = "{519, 0}";
 			sepNavVisRange = "{0, 746}";
 		};
 	};
