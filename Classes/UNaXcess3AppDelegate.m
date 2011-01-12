@@ -106,7 +106,8 @@
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 	NSLog(@"didFinishLaunchingWithOptions finished");
-
+    CGRect  rect = [[UIScreen mainScreen] bounds];
+    [window setFrame:rect];
     return YES;
 }
 
