@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -274,6 +272,7 @@
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>4AD079A812A5544D00FFF66E</string>
+								<string>4ACAF26A12DE590C00CB4192</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
@@ -282,14 +281,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
-									<integer>4</integer>
-									<integer>3</integer>
+									<integer>40</integer>
+									<integer>28</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {230, 662}}</string>
+							<string>{{0, 166}, {230, 662}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,12 +317,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MessageListCustomCell.m</string>
+								<string>UNaXcess3AppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MessageListCustomCell.m</string>
+										<string>UNaXcess3AppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4ACAF2A412DE5B5400CB4192</string>
+										<string>4ACAF2B712DE600300CB4192</string>
 										<key>history</key>
 										<array>
 											<string>4A5CE67C12A3246400BD480C</string>
@@ -358,10 +358,10 @@
 											<string>4AC0AFAC12C0F88A005E6D72</string>
 											<string>4AEFE49212C0FC8300038C03</string>
 											<string>4AAC782D12C1146D004F3887</string>
-											<string>4ACFE1B812DE3D0F00EF67B8</string>
 											<string>4ACFE1B912DE3D0F00EF67B8</string>
 											<string>4ACAF2A212DE5B4300CB4192</string>
-											<string>4AF55FC812BFC573001632C3</string>
+											<string>4ACAF2AE12DE5E5E00CB4192</string>
+											<string>4ACAF2AF12DE5E5E00CB4192</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -561,10 +561,10 @@
 	<array>
 		<string>4ACAF29B12DE5AEF00CB4192</string>
 		<string>4ACAF27B12DE591700CB4192</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4AC822F312A2962300EBC989</string>
 		<string>/Users/phil/Documents/code/iOS-UA-Client/UNaXcess3.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>246 157 1190 721 0 0 1440 878 </string>
@@ -899,6 +899,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -944,7 +946,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

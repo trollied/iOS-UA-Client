@@ -28,5 +28,7 @@
 	<false/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>NSMainNibFile~ipad</key>
+	<string>MainWindowiPad</string>
 </dict>
 </plist>

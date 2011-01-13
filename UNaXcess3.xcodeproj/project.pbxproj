@@ -29,7 +29,7 @@
 		4AC8230112A2A26000EBC989 /* ua3.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AC822FD12A2A26000EBC989 /* ua3.sqlite3 */; };
 		4AC8230312A2A27200EBC989 /* visual.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8230212A2A27200EBC989 /* visual.png */; };
 		4AC8230A12A2A2E700EBC989 /* LoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8230912A2A2E700EBC989 /* LoginWindow.xib */; };
-		4ACAF2AA12DE5D2800CB4192 /* MainWindowiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACAF2A912DE5D2800CB4192 /* MainWindowiPad.xib */; };
+		4ACAF2C512DF048D00CB4192 /* MainWindowiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACAF2C412DF048D00CB4192 /* MainWindowiPad.xib */; };
 		4AD079A912A5544D00FFF66E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4AD079A812A5544D00FFF66E /* Settings.bundle */; };
 		4AD07A2E12A5642F00FFF66E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD07A1A12A5642F00FFF66E /* ASINetworkQueue.m */; };
 		4AD07A2F12A5642F00FFF66E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD07A1C12A5642F00FFF66E /* ASIInputStream.m */; };
@@ -87,7 +87,7 @@
 		4AC822FD12A2A26000EBC989 /* ua3.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ua3.sqlite3; sourceTree = "<group>"; };
 		4AC8230212A2A27200EBC989 /* visual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visual.png; sourceTree = "<group>"; };
 		4AC8230912A2A2E700EBC989 /* LoginWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginWindow.xib; sourceTree = "<group>"; };
-		4ACAF2A912DE5D2800CB4192 /* MainWindowiPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowiPad.xib; sourceTree = "<group>"; };
+		4ACAF2C412DF048D00CB4192 /* MainWindowiPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowiPad.xib; sourceTree = "<group>"; };
 		4AD079A812A5544D00FFF66E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4AD07A1912A5642F00FFF66E /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
 		4AD07A1A12A5642F00FFF66E /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
@@ -186,6 +186,7 @@
 				4AD07A4912A564AD00FFF66E /* SystemConfiguration.framework */,
 				4AD07A4B12A564B200FFF66E /* MobileCoreServices.framework */,
 				4AD07A4D12A564BA00FFF66E /* libz.1.2.3.dylib */,
+				4ACAF2C412DF048D00CB4192 /* MainWindowiPad.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -202,6 +203,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AC8230912A2A2E700EBC989 /* LoginWindow.xib */,
 				4AD07E6012A6CC7900FFF66E /* MessageListCustomCell.xib */,
 				4A5CE76A12A33E0C00BD480C /* FolderListCustomCell.xib */,
 				4A5CE67112A3239500BD480C /* ua3.sqlite */,
@@ -212,7 +214,6 @@
 				8D1107310486CEB800E47090 /* UNaXcess3-Info.plist */,
 				4A52458C12C0D57E002EE2C4 /* ComposeMessage.xib */,
 				4A5245DE12C0E727002EE2C4 /* dist.plist */,
-				4ACAF2A912DE5D2800CB4192 /* MainWindowiPad.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -230,7 +231,6 @@
 		4AC8230B12A2A2F200EBC989 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				4AC8230912A2A2E700EBC989 /* LoginWindow.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 				4AD079A912A5544D00FFF66E /* Settings.bundle in Resources */,
 				4AD07E6112A6CC7900FFF66E /* MessageListCustomCell.xib in Resources */,
 				4A52458D12C0D57E002EE2C4 /* ComposeMessage.xib in Resources */,
-				4ACAF2AA12DE5D2800CB4192 /* MainWindowiPad.xib in Resources */,
+				4ACAF2C512DF048D00CB4192 /* MainWindowiPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
