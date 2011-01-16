@@ -152,129 +152,140 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+	if (tableView.tag == 0) {
+		
+		return 2;
+	}
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //return [arryData count];
-
-UNaXcess3AppDelegate *appDelegate = (UNaXcess3AppDelegate *)[[UIApplication sharedApplication] delegate];
-if (section == 0)
-{
-	NSLog(@"Section %d unread %d",0,appDelegate.messagesUnread.count);
-	return appDelegate.messagesUnread.count;
 	
-} else if (section == 1) {
-	NSLog(@"Section %d all %d",1,appDelegate.messagesAll.count);
-	
-	return appDelegate.messagesAll.count;
-} else {
-	NSLog(@"Section %d !!!",section);
-	return 0;
-}
+	UNaXcess3AppDelegate *appDelegate = (UNaXcess3AppDelegate *)[[UIApplication sharedApplication] delegate];
+	if (tableView.tag == 0) {
+		
+		if (section == 0)
+		{
+			NSLog(@"Section %d unread %d",0,appDelegate.messagesUnread.count);
+			return appDelegate.messagesUnread.count;
+			
+		} else if (section == 1) {
+			NSLog(@"Section %d all %d",1,appDelegate.messagesAll.count);
+			
+			return appDelegate.messagesAll.count;
+		} else {
+			NSLog(@"Section %d !!!",section);
+			return 0;
+		}
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"MessageListCell";
-	
-	MessageListCustomCell *cell = (MessageListCustomCell*)
-	[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
-
-	
-	
-    if (cell == nil) {
-		NSLog(@"Loading cell nib");
-		NSArray *topLevelObjects = [[NSBundle mainBundle]
-									loadNibNamed:@"MessageListCustomCell" owner:nil options:nil];
-		NSLog(@"After nib load");
+	if (tableView.tag == 0) {
 		
-		for (id currentObject in topLevelObjects){
-			if ([currentObject isKindOfClass:[UITableViewCell class]]){
-				cell = (MessageListCustomCell *) currentObject;
-				//cell =  currentObject;
-				break;
+		static NSString *CellIdentifier = @"MessageListCell";
+		
+		MessageListCustomCell *cell = (MessageListCustomCell*)
+		[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+		if (cell == nil) {
+			NSLog(@"Loading cell nib");
+			NSArray *topLevelObjects = [[NSBundle mainBundle]
+										loadNibNamed:@"MessageListCustomCell" owner:nil options:nil];
+			NSLog(@"After nib load");
+			
+			for (id currentObject in topLevelObjects){
+				if ([currentObject isKindOfClass:[UITableViewCell class]]){
+					cell = (MessageListCustomCell *) currentObject;
+					//cell =  currentObject;
+					break;
+				}
 			}
+			//cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 		}
-        //cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-    }
-	//cell.
-	
-    UNaXcess3AppDelegate *appDelegate = (UNaXcess3AppDelegate *)[[UIApplication sharedApplication] delegate];
-	UAMessage *message;
-	//FIX change dates to be nice, like in mail.app
-	//NSLog(@"indexpath.row = %@, section = %@, cell: %@",indexPath.row, indexPath.section);
-	if (indexPath.section == 0)
-	{
-		message = (UAMessage*)[appDelegate.messagesUnread objectAtIndex:indexPath.row];
-		[cell.messageSubject setText:message.subject];	
-		[cell.messageSummary setText:message.messageSummary];
+		//cell.
+		
+		UNaXcess3AppDelegate *appDelegate = (UNaXcess3AppDelegate *)[[UIApplication sharedApplication] delegate];
+		UAMessage *message;
+		//FIX change dates to be nice, like in mail.app
+		//NSLog(@"indexpath.row = %@, section = %@, cell: %@",indexPath.row, indexPath.section);
+		if (indexPath.section == 0)
+		{
+			message = (UAMessage*)[appDelegate.messagesUnread objectAtIndex:indexPath.row];
+			[cell.messageSubject setText:message.subject];	
+			[cell.messageSummary setText:message.messageSummary];
+		}
+		else if (indexPath.section == 1)
+		{
+			message = (UAMessage*)[appDelegate.messagesAll objectAtIndex:indexPath.row];
+			[cell.messageSubject setText:message.subject];	
+			[cell.messageSummary setText:message.messageSummary];
+		}
+		
+		//cell.messageSubject = message.subject;
+		//	NSDateFormatter *format = [[NSDateFormatter alloc] init];
+		//	[format setDateFormat:@"MMM dd, yyyy HH:mm"];
+		//	NSString *dateString = [format stringFromDate:message.date];
+		//	cell.messageSummary = [[NSString alloc] initWithFormat:@"%@ From: %@ To: %@",dateString,message.from,message.to];
+		//cell.messageSummary = message.messageSummary;
+		return cell;
 	}
-	else if (indexPath.section == 1)
-	{
-		message = (UAMessage*)[appDelegate.messagesAll objectAtIndex:indexPath.row];
-		[cell.messageSubject setText:message.subject];	
-		[cell.messageSummary setText:message.messageSummary];
-	}
-	
-	//cell.messageSubject = message.subject;
-//	NSDateFormatter *format = [[NSDateFormatter alloc] init];
-//	[format setDateFormat:@"MMM dd, yyyy HH:mm"];
-//	NSString *dateString = [format stringFromDate:message.date];
-//	cell.messageSummary = [[NSString alloc] initWithFormat:@"%@ From: %@ To: %@",dateString,message.from,message.to];
-	//cell.messageSummary = message.messageSummary;
-	return cell;
-	
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	UNaXcess3AppDelegate *appDelegate = (UNaXcess3AppDelegate *)[[UIApplication sharedApplication] delegate];
-	UAMessage *selectedMessage;
-	UAMessage *previousSelectedMessage;
 	
-	previousSelectedMessage = appDelegate.selectedMessage;
-	
-	if (previousSelectedMessage)
+	if (tableView.tag == 0)
 	{
-		NSLog(@"Marking previous selected message as read %d",previousSelectedMessage.messageid);
-		[[NSNotificationCenter defaultCenter]
-		 postNotificationName:@"markMessageRead"
-		 object:nil ];
-	}
+		UAMessage *selectedMessage;
+		UAMessage *previousSelectedMessage;
 	
-	if (indexPath.section == 0)
-	{
-		selectedMessage = (UAMessage*)[appDelegate.messagesUnread objectAtIndex:indexPath.row];
-		appDelegate.selectedMessage = selectedMessage;
-	} else if (indexPath.section == 1) {
-		selectedMessage = (UAMessage*)[appDelegate.messagesAll objectAtIndex:indexPath.row];
-		appDelegate.selectedMessage = selectedMessage;
-	}
+		previousSelectedMessage = appDelegate.selectedMessage;
+	
+		if (previousSelectedMessage)
+		{
+			NSLog(@"Marking previous selected message as read %d",previousSelectedMessage.messageid);
+			[[NSNotificationCenter defaultCenter]
+			postNotificationName:@"markMessageRead"
+			object:nil ];
+		}
+	
+		if (indexPath.section == 0)
+		{
+			selectedMessage = (UAMessage*)[appDelegate.messagesUnread objectAtIndex:indexPath.row];
+			appDelegate.selectedMessage = selectedMessage;
+		} else if (indexPath.section == 1) {
+			selectedMessage = (UAMessage*)[appDelegate.messagesAll objectAtIndex:indexPath.row];
+			appDelegate.selectedMessage = selectedMessage;
+		}
 	
 	//appDelegate.currentFolder = selectedFolder.foldername;
-	NSLog(@"didSelectRowAtIndexPath (%@) %@ id: %d body: %@", indexPath.description,
-		  selectedMessage.messageSummary, selectedMessage.messageid, selectedMessage.body);
+		NSLog(@"didSelectRowAtIndexPath (%@) %@ id: %d body: %@", indexPath.description,
+			  selectedMessage.messageSummary, selectedMessage.messageid, selectedMessage.body);
 	
 	
 	//[self presentModalViewController:singleFolderView animated:YES];
 	//singleFolderView.singleFolderViewNavbar.topItem.title = appDelegate.currentFolder;
 	//NSLog(@"Calling updateCurrentMessagesListFromDatabase");
 	//[appDelegate updateCurrentMessagesListFromDatabase];
-	[messageView loadHTMLString:appDelegate.selectedMessage.prettybody baseURL:[NSURL URLWithString:@""]];
-
+		[messageView loadHTMLString:appDelegate.selectedMessage.prettybody baseURL:[NSURL URLWithString:@""]];
+	}
+	
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	
-	if(section == 0) {
-		return @"Unread Messages";
-	} else if (section == 1) {
-		return @"All Messages";
-	} else {
-		return @"";
-	}
 	
+	if (tableView.tag == 0) {
+		if(section == 0) {
+			return @"Unread Messages";
+		} else if (section == 1) {
+			return @"All Messages";
+		} else {
+			return @"";
+		}
+	}
 }
 
 -(void)refreshMessageTable

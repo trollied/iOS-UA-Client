@@ -23,6 +23,7 @@
 		4A5CE67212A3239500BD480C /* ua3.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4A5CE67112A3239500BD480C /* ua3.sqlite */; };
 		4A5CE76512A33D9D00BD480C /* FolderListCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CE76412A33D9D00BD480C /* FolderListCustomCell.m */; };
 		4A5CE76B12A33E0C00BD480C /* FolderListCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5CE76A12A33E0C00BD480C /* FolderListCustomCell.xib */; };
+		4AB17A4C12E3B2B500F12529 /* UNaXcess3ViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB17A4B12E3B2B500F12529 /* UNaXcess3ViewControlleriPad.xib */; };
 		4AC822FE12A2A26000EBC989 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC822F812A2A26000EBC989 /* icon.png */; };
 		4AC822FF12A2A26000EBC989 /* UAFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC822F912A2A26000EBC989 /* UAFolder.m */; };
 		4AC8230012A2A26000EBC989 /* UAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC822FB12A2A26000EBC989 /* UAMessage.m */; };
@@ -79,6 +80,7 @@
 		4A5CE76312A33D9D00BD480C /* FolderListCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderListCustomCell.h; sourceTree = "<group>"; };
 		4A5CE76412A33D9D00BD480C /* FolderListCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderListCustomCell.m; sourceTree = "<group>"; };
 		4A5CE76A12A33E0C00BD480C /* FolderListCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FolderListCustomCell.xib; path = Classes/FolderListCustomCell.xib; sourceTree = "<group>"; };
+		4AB17A4B12E3B2B500F12529 /* UNaXcess3ViewControlleriPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UNaXcess3ViewControlleriPad.xib; sourceTree = "<group>"; };
 		4AC822F812A2A26000EBC989 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		4AC822F912A2A26000EBC989 /* UAFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAFolder.m; sourceTree = "<group>"; };
 		4AC822FA12A2A26000EBC989 /* UAFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAFolder.h; sourceTree = "<group>"; };
@@ -186,7 +188,6 @@
 				4AD07A4912A564AD00FFF66E /* SystemConfiguration.framework */,
 				4AD07A4B12A564B200FFF66E /* MobileCoreServices.framework */,
 				4AD07A4D12A564BA00FFF66E /* libz.1.2.3.dylib */,
-				4ACAF2C412DF048D00CB4192 /* MainWindowiPad.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -211,7 +212,9 @@
 				2899E5210DE3E06400AC0155 /* UNaXcess3ViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				4A5CE58D12A309BC00BD480C /* SingleFolderView.xib */,
+				4AB17A4B12E3B2B500F12529 /* UNaXcess3ViewControlleriPad.xib */,
 				8D1107310486CEB800E47090 /* UNaXcess3-Info.plist */,
+				4ACAF2C412DF048D00CB4192 /* MainWindowiPad.xib */,
 				4A52458C12C0D57E002EE2C4 /* ComposeMessage.xib */,
 				4A5245DE12C0E727002EE2C4 /* dist.plist */,
 			);
@@ -373,6 +376,7 @@
 				4AD07E6112A6CC7900FFF66E /* MessageListCustomCell.xib in Resources */,
 				4A52458D12C0D57E002EE2C4 /* ComposeMessage.xib in Resources */,
 				4ACAF2C512DF048D00CB4192 /* MainWindowiPad.xib in Resources */,
+				4AB17A4C12E3B2B500F12529 /* UNaXcess3ViewControlleriPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = dist.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Phillip Jones";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

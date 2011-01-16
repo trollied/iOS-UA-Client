@@ -46,6 +46,10 @@
 	if (sqlite3_config(SQLITE_CONFIG_SERIALIZED) == SQLITE_OK) {
 		NSLog(@"Can now use sqlite on multiple threads, using the same connection");
 	}
+	
+	//[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+
+	
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(eventHandler:)
@@ -109,6 +113,19 @@
     //CGRect  rect = [[UIScreen mainScreen] bounds];
     //[window setFrame:rect];
     return YES;
+}
+
+
+// Delegation methods
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+    const void *devTokenBytes = [devToken bytes];
+//    self.registered = YES;
+
+	NSLog(@"registered for push notifications. dev token: %s",devTokenBytes);
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"Error in registration. Error: %@", err);
 }
 
 -(void) checkAndCreateDatabase{
@@ -464,6 +481,8 @@
 	[request setPassword:UAPassword];
 	[request setValidatesSecureCertificate:NO]; 
 	[request addRequestHeader:@"User-Agent" value:@"iOS UA Client 0.1"];
+	[request addRequestHeader:@"X-Requested-With" value:@"XMLHttpRequest"];
+	 //setHeader("X-Requested-With", "XMLHttpRequest")
 	[request setDidFailSelector:@selector(updateFolderListFail:)];
 	[request setDidFinishSelector:@selector(updateFolderListFinish:)];
 	[request setDelegate:self];
@@ -488,6 +507,8 @@
 	[request setPassword:UAPassword];
 	[request setValidatesSecureCertificate:NO]; 
 	[request addRequestHeader:@"User-Agent" value:@"iOS UA Client 0.1"];
+	[request addRequestHeader:@"X-Requested-With" value:@"XMLHttpRequest"];
+
 	[request setDidFailSelector:@selector(markMessageReadFail:)];
 	[request setDidFinishSelector:@selector(markMessageReadFinish:)];
 	[request setDelegate:self];
@@ -685,6 +706,8 @@
 	[request setPassword:UAPassword];
 	[request setValidatesSecureCertificate:NO]; 
 	[request addRequestHeader:@"User-Agent" value:@"iOS UA Client 0.1"];
+	[request addRequestHeader:@"X-Requested-With" value:@"XMLHttpRequest"];
+
 	[request setDelegate:self];
 	[request setDidFinishSelector:@selector(folderallGetRequestDone:)];
 	
@@ -794,6 +817,17 @@
 	
 }
 
-
+- (NSString *)convertTokenToDeviceID:(NSData *)token {
+	NSMutableString *deviceID = [NSMutableString string];
+	
+	// iterate through the bytes and convert to hex
+	unsigned char *ptr = (unsigned char *)[token bytes];
+	
+	for (NSInteger i=0; i < 32; ++i) {
+        [deviceID appendString:[NSString stringWithFormat:@"%02x", ptr[i]]];
+	}
+	
+	return deviceID;
+}
 
 @end

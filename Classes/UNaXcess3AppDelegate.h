@@ -83,6 +83,7 @@
 - (void)updateFolderListFail:(ASIHTTPRequest *)request;
 - (void)grabAllMessagesInTheBackground:(NSString*)folderName;
 - (void)grabAllMessagesInTheBackground;
+- (NSString *)convertTokenToDeviceID:(NSData *)token;
 
 
 @end
