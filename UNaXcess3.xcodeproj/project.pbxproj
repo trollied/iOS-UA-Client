@@ -71,7 +71,6 @@
 		4A52458C12C0D57E002EE2C4 /* ComposeMessage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeMessage.xib; sourceTree = "<group>"; };
 		4A52458F12C0DBDF002EE2C4 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		4A52459012C0DBDF002EE2C4 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
-		4A5245DE12C0E727002EE2C4 /* dist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dist.plist; sourceTree = "<group>"; };
 		4A5CE43112A2DD5200BD480C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4A5CE58D12A309BC00BD480C /* SingleFolderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleFolderView.xib; sourceTree = "<group>"; };
 		4A5CE59012A309EB00BD480C /* SingleFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleFolderViewController.h; sourceTree = "<group>"; };
@@ -216,7 +215,6 @@
 				8D1107310486CEB800E47090 /* UNaXcess3-Info.plist */,
 				4ACAF2C412DF048D00CB4192 /* MainWindowiPad.xib */,
 				4A52458C12C0D57E002EE2C4 /* ComposeMessage.xib */,
-				4A5245DE12C0E727002EE2C4 /* dist.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -482,13 +480,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Phillip Jones";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Jones (BGZBC9F4YZ)";
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "63F69BD9-30D0-4672-93A9-1B3C040B8EEF";
+				PROVISIONING_PROFILE = "DC0685E6-023E-4C84-91FF-A08F522EA2BE";
 				SDKROOT = iphoneos4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
